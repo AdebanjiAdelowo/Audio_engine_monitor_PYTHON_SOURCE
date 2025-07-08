@@ -1,0 +1,760 @@
+2025-07-07 14:04:45,285 - INFO - Audio Processing System Starting
+2025-07-07 14:04:45,285 - ERROR - UART connection failed: module 'serial' has no attribute 'Serial'
+2025-07-07 14:04:50,286 - ERROR - UART connection failed: module 'serial' has no attribute 'Serial'
+2025-07-07 14:04:55,287 - ERROR - UART connection failed: module 'serial' has no attribute 'Serial'
+2025-07-07 14:05:00,289 - ERROR - UART connection failed: module 'serial' has no attribute 'Serial'
+2025-07-07 14:05:05,290 - ERROR - UART connection failed: module 'serial' has no attribute 'Serial'
+2025-07-07 14:05:10,291 - CRITICAL - Could not initialize UART. Halting system.
+2025-07-07 14:07:54,696 - INFO - Audio Processing System Starting
+2025-07-07 14:07:54,697 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-07 14:07:59,698 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-07 14:08:04,698 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-07 14:08:09,700 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-07 14:08:14,701 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-07 14:08:19,702 - CRITICAL - Could not initialize UART. Halting system.
+2025-07-08 09:13:59,051 - INFO - Audio Processing System Starting
+2025-07-08 09:13:59,051 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:04,053 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:09,054 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:14,055 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:19,056 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:24,056 - CRITICAL - Could not initialize UART. Halting system.
+2025-07-08 09:14:39,428 - INFO - Audio Processing System Starting
+2025-07-08 09:14:39,430 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:44,431 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:49,432 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:54,433 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:14:59,433 - ERROR - UART connection failed: could not open port '/dev/serial0': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:15:07,792 - INFO - Audio Processing System Starting
+2025-07-08 09:15:07,792 - ERROR - UART connection failed: could not open port '/dev/serial1': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:15:12,794 - ERROR - UART connection failed: could not open port '/dev/serial1': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:15:17,795 - ERROR - UART connection failed: could not open port '/dev/serial1': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:15:22,796 - ERROR - UART connection failed: could not open port '/dev/serial1': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:15:27,797 - ERROR - UART connection failed: could not open port '/dev/serial1': FileNotFoundError(2, 'The system cannot find the path specified.', None, 3)
+2025-07-08 09:15:32,798 - CRITICAL - Could not initialize UART. Halting system.
+2025-07-08 09:17:14,109 - INFO - Audio Processing System Starting
+2025-07-08 09:17:14,110 - INFO - Recording from default microphone
+2025-07-08 09:17:14,110 - INFO - System started
+2025-07-08 09:17:14,110 - INFO - Recording: Rec000001.wav
+2025-07-08 09:17:19,230 - INFO - Saved: Rec000001.wav
+2025-07-08 09:17:19,231 - INFO - Analyzing: Rec000001.wav (Queue: 0)
+2025-07-08 09:17:19,231 - INFO - Recording: Rec000002.wav
+2025-07-08 09:17:19,255 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:17:24,351 - INFO - Saved: Rec000002.wav
+2025-07-08 09:17:24,351 - INFO - Analyzing: Rec000002.wav (Queue: 0)
+2025-07-08 09:17:24,351 - INFO - Recording: Rec000003.wav
+2025-07-08 09:17:24,372 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:17:29,471 - INFO - Saved: Rec000003.wav
+2025-07-08 09:17:29,471 - INFO - Analyzing: Rec000003.wav (Queue: 0)
+2025-07-08 09:17:29,471 - INFO - Recording: Rec000004.wav
+2025-07-08 09:17:29,493 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:17:34,591 - INFO - Saved: Rec000004.wav
+2025-07-08 09:17:34,591 - INFO - Analyzing: Rec000004.wav (Queue: 0)
+2025-07-08 09:17:34,591 - INFO - Recording: Rec000005.wav
+2025-07-08 09:17:34,616 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:17:39,711 - INFO - Saved: Rec000005.wav
+2025-07-08 09:17:39,711 - INFO - Analyzing: Rec000005.wav (Queue: 0)
+2025-07-08 09:17:39,711 - INFO - Recording: Rec000006.wav
+2025-07-08 09:17:39,733 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:17:44,831 - INFO - Saved: Rec000006.wav
+2025-07-08 09:17:44,831 - INFO - Analyzing: Rec000006.wav (Queue: 0)
+2025-07-08 09:17:44,831 - INFO - Recording: Rec000007.wav
+2025-07-08 09:17:44,853 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:17:49,951 - INFO - Saved: Rec000007.wav
+2025-07-08 09:17:49,951 - INFO - Analyzing: Rec000007.wav (Queue: 0)
+2025-07-08 09:17:49,951 - INFO - Recording: Rec000008.wav
+2025-07-08 09:17:49,973 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:17:55,071 - INFO - Saved: Rec000008.wav
+2025-07-08 09:17:55,072 - INFO - Analyzing: Rec000008.wav (Queue: 0)
+2025-07-08 09:17:55,072 - INFO - Recording: Rec000009.wav
+2025-07-08 09:17:55,094 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:00,191 - INFO - Saved: Rec000009.wav
+2025-07-08 09:18:00,191 - INFO - Analyzing: Rec000009.wav (Queue: 0)
+2025-07-08 09:18:00,192 - INFO - Recording: Rec000010.wav
+2025-07-08 09:18:00,213 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:05,311 - INFO - Saved: Rec000010.wav
+2025-07-08 09:18:05,312 - INFO - Analyzing: Rec000010.wav (Queue: 0)
+2025-07-08 09:18:05,312 - INFO - Recording: Rec000011.wav
+2025-07-08 09:18:05,333 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:10,431 - INFO - Saved: Rec000011.wav
+2025-07-08 09:18:10,432 - INFO - Analyzing: Rec000011.wav (Queue: 0)
+2025-07-08 09:18:10,432 - INFO - Recording: Rec000012.wav
+2025-07-08 09:18:10,453 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:15,552 - INFO - Saved: Rec000012.wav
+2025-07-08 09:18:15,552 - INFO - Analyzing: Rec000012.wav (Queue: 0)
+2025-07-08 09:18:15,552 - INFO - Recording: Rec000013.wav
+2025-07-08 09:18:15,572 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:20,671 - INFO - Saved: Rec000013.wav
+2025-07-08 09:18:20,672 - INFO - Analyzing: Rec000013.wav (Queue: 0)
+2025-07-08 09:18:20,672 - INFO - Recording: Rec000014.wav
+2025-07-08 09:18:20,694 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:25,791 - INFO - Saved: Rec000014.wav
+2025-07-08 09:18:25,792 - INFO - Analyzing: Rec000014.wav (Queue: 0)
+2025-07-08 09:18:25,792 - INFO - Recording: Rec000015.wav
+2025-07-08 09:18:25,814 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:30,912 - INFO - Saved: Rec000015.wav
+2025-07-08 09:18:30,912 - INFO - Analyzing: Rec000015.wav (Queue: 0)
+2025-07-08 09:18:30,913 - INFO - Recording: Rec000016.wav
+2025-07-08 09:18:30,937 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:36,032 - INFO - Saved: Rec000016.wav
+2025-07-08 09:18:36,032 - INFO - Analyzing: Rec000016.wav (Queue: 0)
+2025-07-08 09:18:36,032 - INFO - Recording: Rec000017.wav
+2025-07-08 09:18:36,058 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:41,152 - INFO - Saved: Rec000017.wav
+2025-07-08 09:18:41,152 - INFO - Analyzing: Rec000017.wav (Queue: 0)
+2025-07-08 09:18:41,152 - INFO - Recording: Rec000018.wav
+2025-07-08 09:18:41,174 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:46,272 - INFO - Saved: Rec000018.wav
+2025-07-08 09:18:46,273 - INFO - Analyzing: Rec000018.wav (Queue: 0)
+2025-07-08 09:18:46,273 - INFO - Recording: Rec000019.wav
+2025-07-08 09:18:46,294 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:51,392 - INFO - Saved: Rec000019.wav
+2025-07-08 09:18:51,393 - INFO - Analyzing: Rec000019.wav (Queue: 0)
+2025-07-08 09:18:51,393 - INFO - Recording: Rec000020.wav
+2025-07-08 09:18:51,415 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:18:56,512 - INFO - Saved: Rec000020.wav
+2025-07-08 09:18:56,513 - INFO - Analyzing: Rec000020.wav (Queue: 0)
+2025-07-08 09:18:56,513 - INFO - Recording: Rec000021.wav
+2025-07-08 09:18:56,535 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:01,632 - INFO - Saved: Rec000021.wav
+2025-07-08 09:19:01,632 - INFO - Analyzing: Rec000021.wav (Queue: 0)
+2025-07-08 09:19:01,632 - INFO - Recording: Rec000022.wav
+2025-07-08 09:19:01,655 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:06,753 - INFO - Saved: Rec000022.wav
+2025-07-08 09:19:06,754 - INFO - Analyzing: Rec000022.wav (Queue: 0)
+2025-07-08 09:19:06,754 - INFO - Recording: Rec000023.wav
+2025-07-08 09:19:06,778 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:11,873 - INFO - Saved: Rec000023.wav
+2025-07-08 09:19:11,873 - INFO - Analyzing: Rec000023.wav (Queue: 0)
+2025-07-08 09:19:11,873 - INFO - Recording: Rec000024.wav
+2025-07-08 09:19:11,895 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:17,003 - INFO - Saved: Rec000024.wav
+2025-07-08 09:19:17,003 - INFO - Analyzing: Rec000024.wav (Queue: 0)
+2025-07-08 09:19:17,004 - INFO - Recording: Rec000025.wav
+2025-07-08 09:19:17,025 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:22,113 - INFO - Saved: Rec000025.wav
+2025-07-08 09:19:22,113 - INFO - Analyzing: Rec000025.wav (Queue: 0)
+2025-07-08 09:19:22,113 - INFO - Recording: Rec000026.wav
+2025-07-08 09:19:22,135 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:27,233 - INFO - Saved: Rec000026.wav
+2025-07-08 09:19:27,234 - INFO - Analyzing: Rec000026.wav (Queue: 0)
+2025-07-08 09:19:27,234 - INFO - Recording: Rec000027.wav
+2025-07-08 09:19:27,256 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:32,353 - INFO - Saved: Rec000027.wav
+2025-07-08 09:19:32,353 - INFO - Analyzing: Rec000027.wav (Queue: 0)
+2025-07-08 09:19:32,354 - INFO - Recording: Rec000028.wav
+2025-07-08 09:19:32,376 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:37,473 - INFO - Saved: Rec000028.wav
+2025-07-08 09:19:37,473 - INFO - Analyzing: Rec000028.wav (Queue: 0)
+2025-07-08 09:19:37,474 - INFO - Recording: Rec000029.wav
+2025-07-08 09:19:37,498 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:42,593 - INFO - Saved: Rec000029.wav
+2025-07-08 09:19:42,595 - INFO - Analyzing: Rec000029.wav (Queue: 0)
+2025-07-08 09:19:42,595 - INFO - Recording: Rec000030.wav
+2025-07-08 09:19:42,616 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:47,714 - INFO - Saved: Rec000030.wav
+2025-07-08 09:19:47,714 - INFO - Analyzing: Rec000030.wav (Queue: 0)
+2025-07-08 09:19:47,714 - INFO - Recording: Rec000031.wav
+2025-07-08 09:19:47,735 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:52,833 - INFO - Saved: Rec000031.wav
+2025-07-08 09:19:52,833 - INFO - Analyzing: Rec000031.wav (Queue: 0)
+2025-07-08 09:19:52,835 - INFO - Recording: Rec000032.wav
+2025-07-08 09:19:52,856 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:19:57,954 - INFO - Saved: Rec000032.wav
+2025-07-08 09:19:57,954 - INFO - Analyzing: Rec000032.wav (Queue: 0)
+2025-07-08 09:19:57,954 - INFO - Recording: Rec000033.wav
+2025-07-08 09:19:57,976 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:03,074 - INFO - Saved: Rec000033.wav
+2025-07-08 09:20:03,075 - INFO - Analyzing: Rec000033.wav (Queue: 0)
+2025-07-08 09:20:03,075 - INFO - Recording: Rec000034.wav
+2025-07-08 09:20:03,098 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:08,194 - INFO - Saved: Rec000034.wav
+2025-07-08 09:20:08,194 - INFO - Analyzing: Rec000034.wav (Queue: 0)
+2025-07-08 09:20:08,194 - INFO - Recording: Rec000035.wav
+2025-07-08 09:20:08,217 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:13,314 - INFO - Saved: Rec000035.wav
+2025-07-08 09:20:13,314 - INFO - Analyzing: Rec000035.wav (Queue: 0)
+2025-07-08 09:20:13,314 - INFO - Recording: Rec000036.wav
+2025-07-08 09:20:13,337 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:18,434 - INFO - Saved: Rec000036.wav
+2025-07-08 09:20:18,434 - INFO - Analyzing: Rec000036.wav (Queue: 0)
+2025-07-08 09:20:18,434 - INFO - Recording: Rec000037.wav
+2025-07-08 09:20:18,458 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:23,554 - INFO - Saved: Rec000037.wav
+2025-07-08 09:20:23,555 - INFO - Analyzing: Rec000037.wav (Queue: 0)
+2025-07-08 09:20:23,555 - INFO - Recording: Rec000038.wav
+2025-07-08 09:20:23,577 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:28,675 - INFO - Saved: Rec000038.wav
+2025-07-08 09:20:28,675 - INFO - Analyzing: Rec000038.wav (Queue: 0)
+2025-07-08 09:20:28,675 - INFO - Recording: Rec000039.wav
+2025-07-08 09:20:28,698 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:33,795 - INFO - Saved: Rec000039.wav
+2025-07-08 09:20:33,795 - INFO - Analyzing: Rec000039.wav (Queue: 0)
+2025-07-08 09:20:33,795 - INFO - Recording: Rec000040.wav
+2025-07-08 09:20:33,820 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:38,915 - INFO - Saved: Rec000040.wav
+2025-07-08 09:20:38,915 - INFO - Analyzing: Rec000040.wav (Queue: 0)
+2025-07-08 09:20:38,915 - INFO - Recording: Rec000041.wav
+2025-07-08 09:20:38,937 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:44,036 - INFO - Saved: Rec000041.wav
+2025-07-08 09:20:44,036 - INFO - Analyzing: Rec000041.wav (Queue: 0)
+2025-07-08 09:20:44,036 - INFO - Recording: Rec000042.wav
+2025-07-08 09:20:44,058 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:49,156 - INFO - Saved: Rec000042.wav
+2025-07-08 09:20:49,156 - INFO - Analyzing: Rec000042.wav (Queue: 0)
+2025-07-08 09:20:49,156 - INFO - Recording: Rec000043.wav
+2025-07-08 09:20:49,178 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:54,275 - INFO - Saved: Rec000043.wav
+2025-07-08 09:20:54,275 - INFO - Analyzing: Rec000043.wav (Queue: 0)
+2025-07-08 09:20:54,276 - INFO - Recording: Rec000044.wav
+2025-07-08 09:20:54,298 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:20:59,395 - INFO - Saved: Rec000044.wav
+2025-07-08 09:20:59,395 - INFO - Analyzing: Rec000044.wav (Queue: 0)
+2025-07-08 09:20:59,395 - INFO - Recording: Rec000045.wav
+2025-07-08 09:20:59,418 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:04,515 - INFO - Saved: Rec000045.wav
+2025-07-08 09:21:04,516 - INFO - Analyzing: Rec000045.wav (Queue: 0)
+2025-07-08 09:21:04,516 - INFO - Recording: Rec000046.wav
+2025-07-08 09:21:04,538 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:09,636 - INFO - Saved: Rec000046.wav
+2025-07-08 09:21:09,636 - INFO - Analyzing: Rec000046.wav (Queue: 0)
+2025-07-08 09:21:09,636 - INFO - Recording: Rec000047.wav
+2025-07-08 09:21:09,657 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:14,755 - INFO - Saved: Rec000047.wav
+2025-07-08 09:21:14,756 - INFO - Analyzing: Rec000047.wav (Queue: 0)
+2025-07-08 09:21:14,756 - INFO - Recording: Rec000048.wav
+2025-07-08 09:21:14,778 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:19,781 - INFO - Saved: Rec000048.wav
+2025-07-08 09:21:19,781 - INFO - Analyzing: Rec000048.wav (Queue: 0)
+2025-07-08 09:21:19,781 - INFO - Recording: Rec000049.wav
+2025-07-08 09:21:19,805 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:24,940 - INFO - Saved: Rec000049.wav
+2025-07-08 09:21:24,940 - INFO - Analyzing: Rec000049.wav (Queue: 0)
+2025-07-08 09:21:24,940 - INFO - Recording: Rec000050.wav
+2025-07-08 09:21:24,963 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:30,029 - INFO - Saved: Rec000050.wav
+2025-07-08 09:21:30,029 - INFO - Analyzing: Rec000050.wav (Queue: 0)
+2025-07-08 09:21:30,029 - INFO - Recording: Rec000051.wav
+2025-07-08 09:21:30,051 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:35,118 - INFO - Saved: Rec000051.wav
+2025-07-08 09:21:35,119 - INFO - Analyzing: Rec000051.wav (Queue: 0)
+2025-07-08 09:21:35,119 - INFO - Recording: Rec000052.wav
+2025-07-08 09:21:35,142 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:40,207 - INFO - Saved: Rec000052.wav
+2025-07-08 09:21:40,207 - INFO - Analyzing: Rec000052.wav (Queue: 0)
+2025-07-08 09:21:40,208 - INFO - Recording: Rec000053.wav
+2025-07-08 09:21:40,232 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:45,296 - INFO - Saved: Rec000053.wav
+2025-07-08 09:21:45,296 - INFO - Analyzing: Rec000053.wav (Queue: 0)
+2025-07-08 09:21:45,296 - INFO - Recording: Rec000054.wav
+2025-07-08 09:21:45,318 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:50,385 - INFO - Saved: Rec000054.wav
+2025-07-08 09:21:50,385 - INFO - Analyzing: Rec000054.wav (Queue: 0)
+2025-07-08 09:21:50,386 - INFO - Recording: Rec000055.wav
+2025-07-08 09:21:50,407 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:21:55,475 - INFO - Saved: Rec000055.wav
+2025-07-08 09:21:55,475 - INFO - Analyzing: Rec000055.wav (Queue: 0)
+2025-07-08 09:21:55,475 - INFO - Recording: Rec000056.wav
+2025-07-08 09:21:55,497 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:00,563 - INFO - Saved: Rec000056.wav
+2025-07-08 09:22:00,563 - INFO - Analyzing: Rec000056.wav (Queue: 0)
+2025-07-08 09:22:00,563 - INFO - Recording: Rec000057.wav
+2025-07-08 09:22:00,585 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:05,651 - INFO - Saved: Rec000057.wav
+2025-07-08 09:22:05,652 - INFO - Analyzing: Rec000057.wav (Queue: 0)
+2025-07-08 09:22:05,652 - INFO - Recording: Rec000058.wav
+2025-07-08 09:22:05,674 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:10,741 - INFO - Saved: Rec000058.wav
+2025-07-08 09:22:10,741 - INFO - Analyzing: Rec000058.wav (Queue: 0)
+2025-07-08 09:22:10,741 - INFO - Recording: Rec000059.wav
+2025-07-08 09:22:10,763 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:15,830 - INFO - Saved: Rec000059.wav
+2025-07-08 09:22:15,830 - INFO - Analyzing: Rec000059.wav (Queue: 0)
+2025-07-08 09:22:15,830 - INFO - Recording: Rec000060.wav
+2025-07-08 09:22:15,852 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:20,918 - INFO - Saved: Rec000060.wav
+2025-07-08 09:22:20,919 - INFO - Analyzing: Rec000060.wav (Queue: 0)
+2025-07-08 09:22:20,919 - INFO - Recording: Rec000061.wav
+2025-07-08 09:22:20,941 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:26,008 - INFO - Saved: Rec000061.wav
+2025-07-08 09:22:26,008 - INFO - Analyzing: Rec000061.wav (Queue: 0)
+2025-07-08 09:22:26,008 - INFO - Recording: Rec000062.wav
+2025-07-08 09:22:26,029 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:31,096 - INFO - Saved: Rec000062.wav
+2025-07-08 09:22:31,097 - INFO - Analyzing: Rec000062.wav (Queue: 0)
+2025-07-08 09:22:31,097 - INFO - Recording: Rec000063.wav
+2025-07-08 09:22:31,124 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:36,186 - INFO - Saved: Rec000063.wav
+2025-07-08 09:22:36,186 - INFO - Analyzing: Rec000063.wav (Queue: 0)
+2025-07-08 09:22:36,186 - INFO - Recording: Rec000064.wav
+2025-07-08 09:22:36,208 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:41,274 - INFO - Saved: Rec000064.wav
+2025-07-08 09:22:41,275 - INFO - Analyzing: Rec000064.wav (Queue: 0)
+2025-07-08 09:22:41,275 - INFO - Recording: Rec000065.wav
+2025-07-08 09:22:41,297 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:46,364 - INFO - Saved: Rec000065.wav
+2025-07-08 09:22:46,364 - INFO - Analyzing: Rec000065.wav (Queue: 0)
+2025-07-08 09:22:46,364 - INFO - Recording: Rec000066.wav
+2025-07-08 09:22:46,386 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:51,452 - INFO - Saved: Rec000066.wav
+2025-07-08 09:22:51,452 - INFO - Analyzing: Rec000066.wav (Queue: 0)
+2025-07-08 09:22:51,452 - INFO - Recording: Rec000067.wav
+2025-07-08 09:22:51,474 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:22:56,540 - INFO - Saved: Rec000067.wav
+2025-07-08 09:22:56,541 - INFO - Analyzing: Rec000067.wav (Queue: 0)
+2025-07-08 09:22:56,541 - INFO - Recording: Rec000068.wav
+2025-07-08 09:22:56,563 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:01,630 - INFO - Saved: Rec000068.wav
+2025-07-08 09:23:01,630 - INFO - Analyzing: Rec000068.wav (Queue: 0)
+2025-07-08 09:23:01,630 - INFO - Recording: Rec000069.wav
+2025-07-08 09:23:01,651 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:06,717 - INFO - Saved: Rec000069.wav
+2025-07-08 09:23:06,719 - INFO - Analyzing: Rec000069.wav (Queue: 0)
+2025-07-08 09:23:06,719 - INFO - Recording: Rec000070.wav
+2025-07-08 09:23:06,740 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:11,807 - INFO - Saved: Rec000070.wav
+2025-07-08 09:23:11,807 - INFO - Analyzing: Rec000070.wav (Queue: 0)
+2025-07-08 09:23:11,807 - INFO - Recording: Rec000071.wav
+2025-07-08 09:23:11,829 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:16,896 - INFO - Saved: Rec000071.wav
+2025-07-08 09:23:16,896 - INFO - Analyzing: Rec000071.wav (Queue: 0)
+2025-07-08 09:23:16,897 - INFO - Recording: Rec000072.wav
+2025-07-08 09:23:16,918 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:21,984 - INFO - Saved: Rec000072.wav
+2025-07-08 09:23:21,985 - INFO - Analyzing: Rec000072.wav (Queue: 0)
+2025-07-08 09:23:21,985 - INFO - Recording: Rec000073.wav
+2025-07-08 09:23:22,007 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:27,074 - INFO - Saved: Rec000073.wav
+2025-07-08 09:23:27,074 - INFO - Analyzing: Rec000073.wav (Queue: 0)
+2025-07-08 09:23:27,075 - INFO - Recording: Rec000074.wav
+2025-07-08 09:23:27,096 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:32,163 - INFO - Saved: Rec000074.wav
+2025-07-08 09:23:32,163 - INFO - Analyzing: Rec000074.wav (Queue: 0)
+2025-07-08 09:23:32,164 - INFO - Recording: Rec000075.wav
+2025-07-08 09:23:32,185 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:37,252 - INFO - Saved: Rec000075.wav
+2025-07-08 09:23:37,252 - INFO - Analyzing: Rec000075.wav (Queue: 0)
+2025-07-08 09:23:37,253 - INFO - Recording: Rec000076.wav
+2025-07-08 09:23:37,277 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:42,342 - INFO - Saved: Rec000076.wav
+2025-07-08 09:23:42,342 - INFO - Analyzing: Rec000076.wav (Queue: 0)
+2025-07-08 09:23:42,342 - INFO - Recording: Rec000077.wav
+2025-07-08 09:23:42,364 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:47,431 - INFO - Saved: Rec000077.wav
+2025-07-08 09:23:47,431 - INFO - Analyzing: Rec000077.wav (Queue: 0)
+2025-07-08 09:23:47,431 - INFO - Recording: Rec000078.wav
+2025-07-08 09:23:47,452 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:52,519 - INFO - Saved: Rec000078.wav
+2025-07-08 09:23:52,519 - INFO - Analyzing: Rec000078.wav (Queue: 0)
+2025-07-08 09:23:52,520 - INFO - Recording: Rec000079.wav
+2025-07-08 09:23:52,540 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:23:57,608 - INFO - Saved: Rec000079.wav
+2025-07-08 09:23:57,609 - INFO - Analyzing: Rec000079.wav (Queue: 0)
+2025-07-08 09:23:57,609 - INFO - Recording: Rec000080.wav
+2025-07-08 09:23:57,632 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:02,698 - INFO - Saved: Rec000080.wav
+2025-07-08 09:24:02,698 - INFO - Analyzing: Rec000080.wav (Queue: 0)
+2025-07-08 09:24:02,698 - INFO - Recording: Rec000081.wav
+2025-07-08 09:24:02,721 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:07,787 - INFO - Saved: Rec000081.wav
+2025-07-08 09:24:07,787 - INFO - Analyzing: Rec000081.wav (Queue: 0)
+2025-07-08 09:24:07,787 - INFO - Recording: Rec000082.wav
+2025-07-08 09:24:07,810 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:12,876 - INFO - Saved: Rec000082.wav
+2025-07-08 09:24:12,876 - INFO - Analyzing: Rec000082.wav (Queue: 0)
+2025-07-08 09:24:12,876 - INFO - Recording: Rec000083.wav
+2025-07-08 09:24:12,898 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:17,966 - INFO - Saved: Rec000083.wav
+2025-07-08 09:24:17,966 - INFO - Analyzing: Rec000083.wav (Queue: 0)
+2025-07-08 09:24:17,966 - INFO - Recording: Rec000084.wav
+2025-07-08 09:24:17,987 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:23,055 - INFO - Saved: Rec000084.wav
+2025-07-08 09:24:23,055 - INFO - Analyzing: Rec000084.wav (Queue: 0)
+2025-07-08 09:24:23,055 - INFO - Recording: Rec000085.wav
+2025-07-08 09:24:23,077 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:28,144 - INFO - Saved: Rec000085.wav
+2025-07-08 09:24:28,144 - INFO - Analyzing: Rec000085.wav (Queue: 0)
+2025-07-08 09:24:28,144 - INFO - Recording: Rec000086.wav
+2025-07-08 09:24:28,165 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:33,233 - INFO - Saved: Rec000086.wav
+2025-07-08 09:24:33,233 - INFO - Analyzing: Rec000086.wav (Queue: 0)
+2025-07-08 09:24:33,233 - INFO - Recording: Rec000087.wav
+2025-07-08 09:24:33,256 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:38,323 - INFO - Saved: Rec000087.wav
+2025-07-08 09:24:38,323 - INFO - Analyzing: Rec000087.wav (Queue: 0)
+2025-07-08 09:24:38,323 - INFO - Recording: Rec000088.wav
+2025-07-08 09:24:38,346 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:43,412 - INFO - Saved: Rec000088.wav
+2025-07-08 09:24:43,412 - INFO - Analyzing: Rec000088.wav (Queue: 0)
+2025-07-08 09:24:43,412 - INFO - Recording: Rec000089.wav
+2025-07-08 09:24:43,434 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:48,501 - INFO - Saved: Rec000089.wav
+2025-07-08 09:24:48,501 - INFO - Analyzing: Rec000089.wav (Queue: 0)
+2025-07-08 09:24:48,501 - INFO - Recording: Rec000090.wav
+2025-07-08 09:24:48,524 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:53,590 - INFO - Saved: Rec000090.wav
+2025-07-08 09:24:53,590 - INFO - Analyzing: Rec000090.wav (Queue: 0)
+2025-07-08 09:24:53,590 - INFO - Recording: Rec000091.wav
+2025-07-08 09:24:53,612 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:24:58,679 - INFO - Saved: Rec000091.wav
+2025-07-08 09:24:58,679 - INFO - Analyzing: Rec000091.wav (Queue: 0)
+2025-07-08 09:24:58,679 - INFO - Recording: Rec000092.wav
+2025-07-08 09:24:58,700 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:03,767 - INFO - Saved: Rec000092.wav
+2025-07-08 09:25:03,768 - INFO - Analyzing: Rec000092.wav (Queue: 0)
+2025-07-08 09:25:03,768 - INFO - Recording: Rec000093.wav
+2025-07-08 09:25:03,790 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:08,856 - INFO - Saved: Rec000093.wav
+2025-07-08 09:25:08,856 - INFO - Analyzing: Rec000093.wav (Queue: 0)
+2025-07-08 09:25:08,857 - INFO - Recording: Rec000094.wav
+2025-07-08 09:25:08,879 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:13,945 - INFO - Saved: Rec000094.wav
+2025-07-08 09:25:13,945 - INFO - Analyzing: Rec000094.wav (Queue: 0)
+2025-07-08 09:25:13,945 - INFO - Recording: Rec000095.wav
+2025-07-08 09:25:13,966 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:19,033 - INFO - Saved: Rec000095.wav
+2025-07-08 09:25:19,033 - INFO - Analyzing: Rec000095.wav (Queue: 0)
+2025-07-08 09:25:19,033 - INFO - Recording: Rec000096.wav
+2025-07-08 09:25:19,056 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:24,121 - INFO - Saved: Rec000096.wav
+2025-07-08 09:25:24,122 - INFO - Analyzing: Rec000096.wav (Queue: 0)
+2025-07-08 09:25:24,122 - INFO - Recording: Rec000097.wav
+2025-07-08 09:25:24,144 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:29,211 - INFO - Saved: Rec000097.wav
+2025-07-08 09:25:29,211 - INFO - Analyzing: Rec000097.wav (Queue: 0)
+2025-07-08 09:25:29,211 - INFO - Recording: Rec000098.wav
+2025-07-08 09:25:29,232 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:34,301 - INFO - Saved: Rec000098.wav
+2025-07-08 09:25:34,301 - INFO - Analyzing: Rec000098.wav (Queue: 0)
+2025-07-08 09:25:34,301 - INFO - Recording: Rec000099.wav
+2025-07-08 09:25:34,324 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:39,390 - INFO - Saved: Rec000099.wav
+2025-07-08 09:25:39,390 - INFO - Analyzing: Rec000099.wav (Queue: 0)
+2025-07-08 09:25:39,390 - INFO - Recording: Rec000100.wav
+2025-07-08 09:25:39,412 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:44,479 - INFO - Saved: Rec000100.wav
+2025-07-08 09:25:44,479 - INFO - Analyzing: Rec000100.wav (Queue: 0)
+2025-07-08 09:25:44,480 - INFO - Recording: Rec000101.wav
+2025-07-08 09:25:44,501 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:49,569 - INFO - Saved: Rec000101.wav
+2025-07-08 09:25:49,569 - INFO - Analyzing: Rec000101.wav (Queue: 0)
+2025-07-08 09:25:49,569 - INFO - Recording: Rec000102.wav
+2025-07-08 09:25:49,591 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:54,660 - INFO - Saved: Rec000102.wav
+2025-07-08 09:25:54,660 - INFO - Analyzing: Rec000102.wav (Queue: 0)
+2025-07-08 09:25:54,660 - INFO - Recording: Rec000103.wav
+2025-07-08 09:25:54,685 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:25:59,750 - INFO - Saved: Rec000103.wav
+2025-07-08 09:25:59,750 - INFO - Analyzing: Rec000103.wav (Queue: 0)
+2025-07-08 09:25:59,750 - INFO - Recording: Rec000104.wav
+2025-07-08 09:25:59,773 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:04,840 - INFO - Saved: Rec000104.wav
+2025-07-08 09:26:04,841 - INFO - Analyzing: Rec000104.wav (Queue: 0)
+2025-07-08 09:26:04,841 - INFO - Recording: Rec000105.wav
+2025-07-08 09:26:04,863 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:09,931 - INFO - Saved: Rec000105.wav
+2025-07-08 09:26:09,931 - INFO - Analyzing: Rec000105.wav (Queue: 0)
+2025-07-08 09:26:09,932 - INFO - Recording: Rec000106.wav
+2025-07-08 09:26:09,954 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:15,020 - INFO - Saved: Rec000106.wav
+2025-07-08 09:26:15,020 - INFO - Analyzing: Rec000106.wav (Queue: 0)
+2025-07-08 09:26:15,021 - INFO - Recording: Rec000107.wav
+2025-07-08 09:26:15,042 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:20,110 - INFO - Saved: Rec000107.wav
+2025-07-08 09:26:20,110 - INFO - Analyzing: Rec000107.wav (Queue: 0)
+2025-07-08 09:26:20,111 - INFO - Recording: Rec000108.wav
+2025-07-08 09:26:20,134 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:25,200 - INFO - Saved: Rec000108.wav
+2025-07-08 09:26:25,201 - INFO - Analyzing: Rec000108.wav (Queue: 0)
+2025-07-08 09:26:25,201 - INFO - Recording: Rec000109.wav
+2025-07-08 09:26:25,223 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:30,288 - INFO - Saved: Rec000109.wav
+2025-07-08 09:26:30,288 - INFO - Analyzing: Rec000109.wav (Queue: 0)
+2025-07-08 09:26:30,289 - INFO - Recording: Rec000110.wav
+2025-07-08 09:26:30,319 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:35,380 - INFO - Saved: Rec000110.wav
+2025-07-08 09:26:35,380 - INFO - Analyzing: Rec000110.wav (Queue: 0)
+2025-07-08 09:26:35,380 - INFO - Recording: Rec000111.wav
+2025-07-08 09:26:35,403 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:40,470 - INFO - Saved: Rec000111.wav
+2025-07-08 09:26:40,471 - INFO - Analyzing: Rec000111.wav (Queue: 0)
+2025-07-08 09:26:40,471 - INFO - Recording: Rec000112.wav
+2025-07-08 09:26:40,492 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:45,559 - INFO - Saved: Rec000112.wav
+2025-07-08 09:26:45,559 - INFO - Analyzing: Rec000112.wav (Queue: 0)
+2025-07-08 09:26:45,559 - INFO - Recording: Rec000113.wav
+2025-07-08 09:26:45,581 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:50,647 - INFO - Saved: Rec000113.wav
+2025-07-08 09:26:50,647 - INFO - Analyzing: Rec000113.wav (Queue: 0)
+2025-07-08 09:26:50,648 - INFO - Recording: Rec000114.wav
+2025-07-08 09:26:50,675 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:26:55,738 - INFO - Saved: Rec000114.wav
+2025-07-08 09:26:55,739 - INFO - Analyzing: Rec000114.wav (Queue: 0)
+2025-07-08 09:26:55,739 - INFO - Recording: Rec000115.wav
+2025-07-08 09:26:55,761 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:00,828 - INFO - Saved: Rec000115.wav
+2025-07-08 09:27:00,828 - INFO - Analyzing: Rec000115.wav (Queue: 0)
+2025-07-08 09:27:00,828 - INFO - Recording: Rec000116.wav
+2025-07-08 09:27:00,850 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:05,916 - INFO - Saved: Rec000116.wav
+2025-07-08 09:27:05,916 - INFO - Analyzing: Rec000116.wav (Queue: 0)
+2025-07-08 09:27:05,916 - INFO - Recording: Rec000117.wav
+2025-07-08 09:27:05,938 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:11,004 - INFO - Saved: Rec000117.wav
+2025-07-08 09:27:11,004 - INFO - Analyzing: Rec000117.wav (Queue: 0)
+2025-07-08 09:27:11,004 - INFO - Recording: Rec000118.wav
+2025-07-08 09:27:11,027 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:16,094 - INFO - Saved: Rec000118.wav
+2025-07-08 09:27:16,094 - INFO - Analyzing: Rec000118.wav (Queue: 0)
+2025-07-08 09:27:16,094 - INFO - Recording: Rec000119.wav
+2025-07-08 09:27:16,116 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:21,182 - INFO - Saved: Rec000119.wav
+2025-07-08 09:27:21,182 - INFO - Analyzing: Rec000119.wav (Queue: 0)
+2025-07-08 09:27:21,183 - INFO - Recording: Rec000120.wav
+2025-07-08 09:27:21,205 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:26,271 - INFO - Saved: Rec000120.wav
+2025-07-08 09:27:26,272 - INFO - Analyzing: Rec000120.wav (Queue: 0)
+2025-07-08 09:27:26,272 - INFO - Recording: Rec000121.wav
+2025-07-08 09:27:26,294 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:31,360 - INFO - Saved: Rec000121.wav
+2025-07-08 09:27:31,360 - INFO - Analyzing: Rec000121.wav (Queue: 0)
+2025-07-08 09:27:31,360 - INFO - Recording: Rec000122.wav
+2025-07-08 09:27:31,382 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:36,450 - INFO - Saved: Rec000122.wav
+2025-07-08 09:27:36,450 - INFO - Analyzing: Rec000122.wav (Queue: 0)
+2025-07-08 09:27:36,450 - INFO - Recording: Rec000123.wav
+2025-07-08 09:27:36,473 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:41,538 - INFO - Saved: Rec000123.wav
+2025-07-08 09:27:41,538 - INFO - Analyzing: Rec000123.wav (Queue: 0)
+2025-07-08 09:27:41,538 - INFO - Recording: Rec000124.wav
+2025-07-08 09:27:41,560 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:46,627 - INFO - Saved: Rec000124.wav
+2025-07-08 09:27:46,627 - INFO - Analyzing: Rec000124.wav (Queue: 0)
+2025-07-08 09:27:46,627 - INFO - Recording: Rec000125.wav
+2025-07-08 09:27:46,649 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:51,717 - INFO - Saved: Rec000125.wav
+2025-07-08 09:27:51,717 - INFO - Analyzing: Rec000125.wav (Queue: 0)
+2025-07-08 09:27:51,717 - INFO - Recording: Rec000126.wav
+2025-07-08 09:27:51,740 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:27:56,806 - INFO - Saved: Rec000126.wav
+2025-07-08 09:27:56,806 - INFO - Analyzing: Rec000126.wav (Queue: 0)
+2025-07-08 09:27:56,806 - INFO - Recording: Rec000127.wav
+2025-07-08 09:27:56,827 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:01,895 - INFO - Saved: Rec000127.wav
+2025-07-08 09:28:01,895 - INFO - Analyzing: Rec000127.wav (Queue: 0)
+2025-07-08 09:28:01,895 - INFO - Recording: Rec000128.wav
+2025-07-08 09:28:01,917 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:06,984 - INFO - Saved: Rec000128.wav
+2025-07-08 09:28:06,984 - INFO - Analyzing: Rec000128.wav (Queue: 0)
+2025-07-08 09:28:06,984 - INFO - Recording: Rec000129.wav
+2025-07-08 09:28:07,006 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:12,072 - INFO - Saved: Rec000129.wav
+2025-07-08 09:28:12,072 - INFO - Analyzing: Rec000129.wav (Queue: 0)
+2025-07-08 09:28:12,073 - INFO - Recording: Rec000130.wav
+2025-07-08 09:28:12,094 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:17,161 - INFO - Saved: Rec000130.wav
+2025-07-08 09:28:17,161 - INFO - Analyzing: Rec000130.wav (Queue: 0)
+2025-07-08 09:28:17,161 - INFO - Recording: Rec000131.wav
+2025-07-08 09:28:17,184 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:22,251 - INFO - Saved: Rec000131.wav
+2025-07-08 09:28:22,251 - INFO - Analyzing: Rec000131.wav (Queue: 0)
+2025-07-08 09:28:22,251 - INFO - Recording: Rec000132.wav
+2025-07-08 09:28:22,272 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:27,339 - INFO - Saved: Rec000132.wav
+2025-07-08 09:28:27,339 - INFO - Analyzing: Rec000132.wav (Queue: 0)
+2025-07-08 09:28:27,340 - INFO - Recording: Rec000133.wav
+2025-07-08 09:28:27,361 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:32,428 - INFO - Saved: Rec000133.wav
+2025-07-08 09:28:32,428 - INFO - Analyzing: Rec000133.wav (Queue: 0)
+2025-07-08 09:28:32,428 - INFO - Recording: Rec000134.wav
+2025-07-08 09:28:32,451 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:37,517 - INFO - Saved: Rec000134.wav
+2025-07-08 09:28:37,518 - INFO - Analyzing: Rec000134.wav (Queue: 0)
+2025-07-08 09:28:37,518 - INFO - Recording: Rec000135.wav
+2025-07-08 09:28:37,542 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:42,606 - INFO - Saved: Rec000135.wav
+2025-07-08 09:28:42,606 - INFO - Analyzing: Rec000135.wav (Queue: 0)
+2025-07-08 09:28:42,606 - INFO - Recording: Rec000136.wav
+2025-07-08 09:28:42,629 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:47,695 - INFO - Saved: Rec000136.wav
+2025-07-08 09:28:47,695 - INFO - Analyzing: Rec000136.wav (Queue: 0)
+2025-07-08 09:28:47,695 - INFO - Recording: Rec000137.wav
+2025-07-08 09:28:47,717 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:52,784 - INFO - Saved: Rec000137.wav
+2025-07-08 09:28:52,784 - INFO - Analyzing: Rec000137.wav (Queue: 0)
+2025-07-08 09:28:52,784 - INFO - Recording: Rec000138.wav
+2025-07-08 09:28:52,805 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:28:57,872 - INFO - Saved: Rec000138.wav
+2025-07-08 09:28:57,872 - INFO - Analyzing: Rec000138.wav (Queue: 0)
+2025-07-08 09:28:57,872 - INFO - Recording: Rec000139.wav
+2025-07-08 09:28:57,895 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:02,960 - INFO - Saved: Rec000139.wav
+2025-07-08 09:29:02,960 - INFO - Analyzing: Rec000139.wav (Queue: 0)
+2025-07-08 09:29:02,960 - INFO - Recording: Rec000140.wav
+2025-07-08 09:29:02,982 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:08,050 - INFO - Saved: Rec000140.wav
+2025-07-08 09:29:08,050 - INFO - Analyzing: Rec000140.wav (Queue: 0)
+2025-07-08 09:29:08,050 - INFO - Recording: Rec000141.wav
+2025-07-08 09:29:08,072 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:13,138 - INFO - Saved: Rec000141.wav
+2025-07-08 09:29:13,139 - INFO - Analyzing: Rec000141.wav (Queue: 0)
+2025-07-08 09:29:13,139 - INFO - Recording: Rec000142.wav
+2025-07-08 09:29:13,160 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:18,227 - INFO - Saved: Rec000142.wav
+2025-07-08 09:29:18,227 - INFO - Analyzing: Rec000142.wav (Queue: 0)
+2025-07-08 09:29:18,227 - INFO - Recording: Rec000143.wav
+2025-07-08 09:29:18,249 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:23,316 - INFO - Saved: Rec000143.wav
+2025-07-08 09:29:23,316 - INFO - Analyzing: Rec000143.wav (Queue: 0)
+2025-07-08 09:29:23,317 - INFO - Recording: Rec000144.wav
+2025-07-08 09:29:23,339 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:28,405 - INFO - Saved: Rec000144.wav
+2025-07-08 09:29:28,406 - INFO - Analyzing: Rec000144.wav (Queue: 0)
+2025-07-08 09:29:28,406 - INFO - Recording: Rec000145.wav
+2025-07-08 09:29:28,427 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:33,495 - INFO - Saved: Rec000145.wav
+2025-07-08 09:29:33,495 - INFO - Analyzing: Rec000145.wav (Queue: 0)
+2025-07-08 09:29:33,495 - INFO - Recording: Rec000146.wav
+2025-07-08 09:29:33,518 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:38,583 - INFO - Saved: Rec000146.wav
+2025-07-08 09:29:38,583 - INFO - Analyzing: Rec000146.wav (Queue: 0)
+2025-07-08 09:29:38,583 - INFO - Recording: Rec000147.wav
+2025-07-08 09:29:38,605 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:43,672 - INFO - Saved: Rec000147.wav
+2025-07-08 09:29:43,672 - INFO - Analyzing: Rec000147.wav (Queue: 0)
+2025-07-08 09:29:43,672 - INFO - Recording: Rec000148.wav
+2025-07-08 09:29:43,693 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:48,761 - INFO - Saved: Rec000148.wav
+2025-07-08 09:29:48,761 - INFO - Analyzing: Rec000148.wav (Queue: 0)
+2025-07-08 09:29:48,761 - INFO - Recording: Rec000149.wav
+2025-07-08 09:29:48,783 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:53,849 - INFO - Saved: Rec000149.wav
+2025-07-08 09:29:53,849 - INFO - Analyzing: Rec000149.wav (Queue: 0)
+2025-07-08 09:29:53,850 - INFO - Recording: Rec000150.wav
+2025-07-08 09:29:53,872 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:29:58,938 - INFO - Saved: Rec000150.wav
+2025-07-08 09:29:58,938 - INFO - Analyzing: Rec000150.wav (Queue: 0)
+2025-07-08 09:29:58,938 - INFO - Recording: Rec000151.wav
+2025-07-08 09:29:58,961 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:04,027 - INFO - Saved: Rec000151.wav
+2025-07-08 09:30:04,027 - INFO - Analyzing: Rec000151.wav (Queue: 0)
+2025-07-08 09:30:04,027 - INFO - Recording: Rec000152.wav
+2025-07-08 09:30:04,049 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:09,117 - INFO - Saved: Rec000152.wav
+2025-07-08 09:30:09,117 - INFO - Analyzing: Rec000152.wav (Queue: 0)
+2025-07-08 09:30:09,117 - INFO - Recording: Rec000153.wav
+2025-07-08 09:30:09,137 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:14,204 - INFO - Saved: Rec000153.wav
+2025-07-08 09:30:14,204 - INFO - Analyzing: Rec000153.wav (Queue: 0)
+2025-07-08 09:30:14,204 - INFO - Recording: Rec000154.wav
+2025-07-08 09:30:14,226 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:19,293 - INFO - Saved: Rec000154.wav
+2025-07-08 09:30:19,293 - INFO - Analyzing: Rec000154.wav (Queue: 0)
+2025-07-08 09:30:19,293 - INFO - Recording: Rec000155.wav
+2025-07-08 09:30:19,315 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:24,382 - INFO - Saved: Rec000155.wav
+2025-07-08 09:30:24,382 - INFO - Analyzing: Rec000155.wav (Queue: 0)
+2025-07-08 09:30:24,383 - INFO - Recording: Rec000156.wav
+2025-07-08 09:30:24,404 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:29,472 - INFO - Saved: Rec000156.wav
+2025-07-08 09:30:29,472 - INFO - Analyzing: Rec000156.wav (Queue: 0)
+2025-07-08 09:30:29,473 - INFO - Recording: Rec000157.wav
+2025-07-08 09:30:29,494 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:34,562 - INFO - Saved: Rec000157.wav
+2025-07-08 09:30:34,562 - INFO - Analyzing: Rec000157.wav (Queue: 0)
+2025-07-08 09:30:34,562 - INFO - Recording: Rec000158.wav
+2025-07-08 09:30:34,584 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:39,650 - INFO - Saved: Rec000158.wav
+2025-07-08 09:30:39,650 - INFO - Analyzing: Rec000158.wav (Queue: 0)
+2025-07-08 09:30:39,650 - INFO - Recording: Rec000159.wav
+2025-07-08 09:30:39,673 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:44,739 - INFO - Saved: Rec000159.wav
+2025-07-08 09:30:44,739 - INFO - Analyzing: Rec000159.wav (Queue: 0)
+2025-07-08 09:30:44,740 - INFO - Recording: Rec000160.wav
+2025-07-08 09:30:44,762 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:49,828 - INFO - Saved: Rec000160.wav
+2025-07-08 09:30:49,828 - INFO - Analyzing: Rec000160.wav (Queue: 0)
+2025-07-08 09:30:49,828 - INFO - Recording: Rec000161.wav
+2025-07-08 09:30:49,850 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:30:54,916 - INFO - Saved: Rec000161.wav
+2025-07-08 09:30:54,917 - INFO - Analyzing: Rec000161.wav (Queue: 0)
+2025-07-08 09:30:54,917 - INFO - Recording: Rec000162.wav
+2025-07-08 09:30:54,939 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:00,007 - INFO - Saved: Rec000162.wav
+2025-07-08 09:31:00,007 - INFO - Analyzing: Rec000162.wav (Queue: 0)
+2025-07-08 09:31:00,007 - INFO - Recording: Rec000163.wav
+2025-07-08 09:31:00,029 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:05,095 - INFO - Saved: Rec000163.wav
+2025-07-08 09:31:05,096 - INFO - Analyzing: Rec000163.wav (Queue: 0)
+2025-07-08 09:31:05,096 - INFO - Recording: Rec000164.wav
+2025-07-08 09:31:05,118 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:10,184 - INFO - Saved: Rec000164.wav
+2025-07-08 09:31:10,184 - INFO - Analyzing: Rec000164.wav (Queue: 0)
+2025-07-08 09:31:10,185 - INFO - Recording: Rec000165.wav
+2025-07-08 09:31:10,208 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:15,273 - INFO - Saved: Rec000165.wav
+2025-07-08 09:31:15,274 - INFO - Analyzing: Rec000165.wav (Queue: 0)
+2025-07-08 09:31:15,274 - INFO - Recording: Rec000166.wav
+2025-07-08 09:31:15,296 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:20,362 - INFO - Saved: Rec000166.wav
+2025-07-08 09:31:20,362 - INFO - Analyzing: Rec000166.wav (Queue: 0)
+2025-07-08 09:31:20,362 - INFO - Recording: Rec000167.wav
+2025-07-08 09:31:20,385 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:25,451 - INFO - Saved: Rec000167.wav
+2025-07-08 09:31:25,451 - INFO - Analyzing: Rec000167.wav (Queue: 0)
+2025-07-08 09:31:25,451 - INFO - Recording: Rec000168.wav
+2025-07-08 09:31:25,473 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:30,539 - INFO - Saved: Rec000168.wav
+2025-07-08 09:31:30,540 - INFO - Analyzing: Rec000168.wav (Queue: 0)
+2025-07-08 09:31:30,540 - INFO - Recording: Rec000169.wav
+2025-07-08 09:31:30,562 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:35,629 - INFO - Saved: Rec000169.wav
+2025-07-08 09:31:35,629 - INFO - Analyzing: Rec000169.wav (Queue: 0)
+2025-07-08 09:31:35,629 - INFO - Recording: Rec000170.wav
+2025-07-08 09:31:35,654 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:40,718 - INFO - Saved: Rec000170.wav
+2025-07-08 09:31:40,718 - INFO - Analyzing: Rec000170.wav (Queue: 0)
+2025-07-08 09:31:40,718 - INFO - Recording: Rec000171.wav
+2025-07-08 09:31:40,741 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:45,807 - INFO - Saved: Rec000171.wav
+2025-07-08 09:31:45,807 - INFO - Analyzing: Rec000171.wav (Queue: 0)
+2025-07-08 09:31:45,808 - INFO - Recording: Rec000172.wav
+2025-07-08 09:31:45,830 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:50,897 - INFO - Saved: Rec000172.wav
+2025-07-08 09:31:50,898 - INFO - Analyzing: Rec000172.wav (Queue: 0)
+2025-07-08 09:31:50,898 - INFO - Recording: Rec000173.wav
+2025-07-08 09:31:50,920 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:31:55,985 - INFO - Saved: Rec000173.wav
+2025-07-08 09:31:55,986 - INFO - Analyzing: Rec000173.wav (Queue: 0)
+2025-07-08 09:31:55,986 - INFO - Recording: Rec000174.wav
+2025-07-08 09:31:56,007 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:32:01,074 - INFO - Saved: Rec000174.wav
+2025-07-08 09:32:01,074 - INFO - Analyzing: Rec000174.wav (Queue: 0)
+2025-07-08 09:32:01,074 - INFO - Recording: Rec000175.wav
+2025-07-08 09:32:01,096 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:32:06,163 - INFO - Saved: Rec000175.wav
+2025-07-08 09:32:06,163 - INFO - Analyzing: Rec000175.wav (Queue: 0)
+2025-07-08 09:32:06,163 - INFO - Recording: Rec000176.wav
+2025-07-08 09:32:06,185 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:32:11,251 - INFO - Saved: Rec000176.wav
+2025-07-08 09:32:11,252 - INFO - Analyzing: Rec000176.wav (Queue: 0)
+2025-07-08 09:32:11,252 - INFO - Recording: Rec000177.wav
+2025-07-08 09:32:11,274 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:32:16,342 - INFO - Saved: Rec000177.wav
+2025-07-08 09:32:16,342 - INFO - Analyzing: Rec000177.wav (Queue: 0)
+2025-07-08 09:32:16,342 - INFO - Recording: Rec000178.wav
+2025-07-08 09:32:16,364 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:32:21,430 - INFO - Saved: Rec000178.wav
+2025-07-08 09:32:21,430 - INFO - Analyzing: Rec000178.wav (Queue: 0)
+2025-07-08 09:32:21,430 - INFO - Recording: Rec000179.wav
+2025-07-08 09:32:21,453 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:32:26,519 - INFO - Saved: Rec000179.wav
+2025-07-08 09:32:26,519 - INFO - Analyzing: Rec000179.wav (Queue: 0)
+2025-07-08 09:32:26,519 - INFO - Recording: Rec000180.wav
+2025-07-08 09:32:26,541 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:32:31,608 - INFO - Saved: Rec000180.wav
+2025-07-08 09:32:31,608 - INFO - Analyzing: Rec000180.wav (Queue: 0)
+2025-07-08 09:32:31,608 - INFO - Recording: Rec000181.wav
+2025-07-08 09:32:31,631 - WARNING - UART disconnected. Attempting to reconnect.
+2025-07-08 09:32:34,779 - INFO - Stopping system
+2025-07-08 09:32:34,779 - INFO - System stopped
