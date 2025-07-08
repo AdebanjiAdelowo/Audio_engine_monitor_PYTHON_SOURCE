@@ -464,7 +464,8 @@ def analyzer():
                 rpm = datum.get_derived_data(DerivedDataKey.RPM) or 0.0
                 status = datum.get_derived_data(DerivedDataKey.ENGINE_STATUS) or 0
                 freq = datum.get_derived_data(DerivedDataKey.FREQUENCY_PEAK) or 0.0
-                print(f"   ⚡ RPM:{rpm:.1f}, Status:{status}, Freq:{freq:.1f}Hz")
+                fft_data = datum.get_derived_data(DerivedDataKey.FFT_DATA) or 0.0
+                print(f"⚡ RPM:{rpm:.1f}, Status:{status}, Freq:{freq:.1f}Hz, Fft: {fft_data}")
         except Exception as e:
             print(f"Analysis error: {e}")
             logging.error(f"Analysis error: {e}")
