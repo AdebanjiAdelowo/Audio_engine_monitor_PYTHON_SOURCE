@@ -13,7 +13,7 @@ import logging
 from typing import Tuple
 
 # Settings
-AUDIO_DIR = "./recordings"
+AUDIO_DIR = "./BANJI_WORK_CODE/simulation_data/audios" # "./recordings"
 UART_PORT = "/dev/serial0"  # Change to your ESP32 port (e.g., "/dev/ttyUSB0")
 UART_BAUDRATE = 115200
 DECIMATED_RATE = 500

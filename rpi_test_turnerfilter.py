@@ -10,16 +10,37 @@ from scipy.signal import decimate, butter, filtfilt, find_peaks
 from scipy.fft import fft, fftfreq
 import glob
 import logging
+import csv
+from datetime import datetime
 from typing import Tuple
 
 # Settings
-AUDIO_DIR = "./recordings"
+AUDIO_DIR =  "./recordings"  # "./BANJI_WORK_CODE/simulation_data/audios" #
 UART_PORT = "/dev/serial0"  # Change to your ESP32 port (e.g., "/dev/ttyUSB0")
 UART_BAUDRATE = 115200
 DECIMATED_RATE = 500
 EVENTS_PER_CYCLE = 2
 ANALYZE_QUEUE_SIZE = 10
 LOG_FILE = "audio_system_test.log"
+
+# CSV Results Settings
+RESULTS_CSV_FILE = "audio_analysis_results.csv"
+CSV_HEADERS = [
+    'timestamp',
+    'datetime',
+    'filename',
+    'sequence_number',
+    'sample_rate',
+    'audio_duration_seconds',
+    'decimated_rate',
+    'frequency_peak_hz',
+    'rpm',
+    'engine_status',
+    'processing_time_ms',
+    'buffer_size_samples',
+    'peak_amplitude',
+    'notes'
+]
 
 # Test mode settings
 TEST_MODE = True
@@ -55,13 +76,61 @@ os.makedirs(AUDIO_DIR, exist_ok=True)
 # Queues
 analyze_queue = queue.Queue(maxsize=ANALYZE_QUEUE_SIZE)
 
+# CSV file lock for thread safety
+csv_lock = threading.Lock()
+
+def initialize_csv_file():
+    """Initialize the CSV file with headers if it doesn't exist"""
+    if not os.path.exists(RESULTS_CSV_FILE):
+        with open(RESULTS_CSV_FILE, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(CSV_HEADERS)
+        print(f"📊 Created CSV results file: {RESULTS_CSV_FILE}")
+        logging.info(f"Created CSV results file: {RESULTS_CSV_FILE}")
+    else:
+        print(f"📊 Using existing CSV results file: {RESULTS_CSV_FILE}")
+
+def save_results_to_csv(analysis_data):
+    """Save analysis results to CSV file in a thread-safe manner"""
+    try:
+        with csv_lock:
+            with open(RESULTS_CSV_FILE, 'a', newline='', encoding='utf-8') as csvfile:
+                writer = csv.writer(csvfile)
+                
+                # Prepare the row data
+                row = [
+                    analysis_data.get('timestamp', ''),
+                    analysis_data.get('datetime', ''),
+                    analysis_data.get('filename', ''),
+                    analysis_data.get('sequence_number', ''),
+                    analysis_data.get('sample_rate', ''),
+                    analysis_data.get('audio_duration_seconds', ''),
+                    analysis_data.get('decimated_rate', ''),
+                    analysis_data.get('frequency_peak_hz', ''),
+                    analysis_data.get('rpm', ''),
+                    analysis_data.get('engine_status', ''),
+                    analysis_data.get('processing_time_ms', ''),
+                    analysis_data.get('buffer_size_samples', ''),
+                    analysis_data.get('peak_amplitude', ''),
+                    analysis_data.get('notes', '')
+                ]
+                
+                writer.writerow(row)
+                
+        print(f"💾 Results saved to CSV: {analysis_data.get('filename', 'unknown')}")
+        logging.info(f"Results saved to CSV for file: {analysis_data.get('filename', 'unknown')}")
+        
+    except Exception as e:
+        print(f"❌ Error saving to CSV: {e}")
+        logging.error(f"Error saving to CSV: {e}")
+
 # Mock UART for testing
 class MockUART:
     def __init__(self):
         self.is_open = True
         self.packet_count = 0
         
-    def send_packet(self, timestamp, datum, seq_num):
+    def send_packet(self, timestamp, datum, seq_num, analysis_data=None):
         """Mock UART send function that just logs the data"""
         rpm = datum.get_derived_data(DerivedDataKey.RPM) or 0.0
         status = datum.get_derived_data(DerivedDataKey.ENGINE_STATUS) or 0
@@ -70,6 +139,11 @@ class MockUART:
         print(f"✓ MOCK UART - Seq:{seq_num}, RPM:{rpm:.1f}, Status:{status}, Freq:{freq:.1f}Hz")
         logging.info(f"Mock packet sent - Seq:{seq_num}, RPM:{rpm:.1f}, Status:{status}, Freq:{freq:.1f}Hz")
         self.packet_count += 1
+        
+        # Save to CSV if analysis data is provided
+        if analysis_data:
+            save_results_to_csv(analysis_data)
+            
         return True
         
     def send_record_alert(self, timestamp):
@@ -93,6 +167,8 @@ class DerivedDataKey:
     FREQUENCY_PEAK_FILTERED_AUDIO = "frequency_peak_filtered_audio"
     RPM = "rpm"
     ENGINE_STATUS = "engine_status"
+    PEAK_AMPLITUDE = "peak_amplitude"  # New field for CSV
+    BUFFER_SIZE = "buffer_size"  # New field for CSV
 
 class Datum:
     def __init__(self, audio_array, sample_rate):
@@ -200,6 +276,7 @@ class TunableFilter:
         self.__peak_freq = init_freq
         self.__bandwidth = bandwidth
         self.__order = order
+        self.__peak_amplitude = 0.0  # Store peak amplitude for CSV
         
         self.__bp_filter = BandPassFilter(
             lowcut=10,
@@ -212,6 +289,9 @@ class TunableFilter:
 
     def get_peak_freq(self) -> float:
         return self.__peak_freq
+
+    def get_peak_amplitude(self) -> float:
+        return self.__peak_amplitude
 
     def set_peak_freq(self, freq: float):
         self.__peak_freq = freq
@@ -262,11 +342,12 @@ class TunableFilter:
         power_spectrum = np.abs(freq_signal[:len(freq_signal) // 2])
 
         # Find the peaks in the power spectrum - IMPROVED APPROACH
-        peak_indices = find_peaks(power_spectrum, distance=sample_rate)[0]
+        peak_indices = find_peaks(power_spectrum, distance=sample_rate//10)[0]  # Fixed: better distance parameter
         peak_frequencies = self.__fft.get_freq()[peak_indices]
 
         # If there are no peaks, return the filtered signal
         if len(peak_indices) == 0:
+            self.__peak_amplitude = 0.0
             return filtered_signal
 
         # FIXED: Find the peak with highest amplitude (not minimum frequency)
@@ -275,11 +356,14 @@ class TunableFilter:
         max_power_idx = np.argmax(peak_powers)
         peak_index = peak_indices[max_power_idx]
 
+        # Store the peak amplitude for CSV logging
+        self.__peak_amplitude = peak_powers[max_power_idx]
+
         # Find the frequency of the highest amplitude peak
         peak_frequency = self.__fft.get_freq()[peak_index]
 
         # Set the peak frequency
-        self.set_peak_freq(peak_frequency)
+        self.set_peak_freq(abs(peak_frequency))  # Fixed: ensure positive frequency
 
         # Return the filtered signal
         return filtered_signal
@@ -348,6 +432,10 @@ class FrequencyPeakFinder(FeatureExtraction):
 
         # Add the frequency peak to the signal's derived data - ORIGINAL APPROACH
         signal.add_derived_data(DerivedDataKey.FREQUENCY_PEAK, self.__filter.get_peak_freq())
+        
+        # Add peak amplitude and buffer size for CSV logging
+        signal.add_derived_data(DerivedDataKey.PEAK_AMPLITUDE, self.__filter.get_peak_amplitude())
+        signal.add_derived_data(DerivedDataKey.BUFFER_SIZE, len(self.__buffer))
 
         return signal
 
@@ -366,13 +454,15 @@ class RPM(FeatureExtraction):
         signal.add_derived_data(DerivedDataKey.RPM, rpm)
         
         # Add engine status
-        engine_status = 1 if rpm > 100 else 0
+        engine_status = 1 if rpm and rpm > 100 else 0  # Fixed: handle None values
         signal.add_derived_data(DerivedDataKey.ENGINE_STATUS, engine_status)
 
         return signal
 
     def __calculate_rpm(self, peak: float) -> float:
         # ORIGINAL APPROACH: RPM calculation
+        if peak is None or peak <= 0:  # Fixed: handle None and zero values
+            return 0.0
         return peak * 60 / self.__events_per_crankshaft_cycle
 
 # FeatureEngineeringPipeline (unchanged)
@@ -474,6 +564,8 @@ def analyzer():
     while True:
         try:
             filepath, process_timestamp, seq_num = analyze_queue.get()
+            analysis_start_time = time.time()
+            
             print(f"🔬 Analyzing: {os.path.basename(filepath)} (Queue: {analyze_queue.qsize()})")
             logging.info(f"Analyzing: {os.path.basename(filepath)} (Queue: {analyze_queue.qsize()})")
             
@@ -486,17 +578,41 @@ def analyzer():
             if len(data.shape) > 1:
                 data = data.flatten()
                 
+            # Calculate audio duration
+            audio_duration = len(data) / sample_rate
+                
             datum = Datum(audio_array=data, sample_rate=sample_rate)
             datum = pipeline.run(datum)
             
-            # Use mock UART instead of real UART
-            success = mock_uart.send_packet(process_timestamp, datum, seq_num)
+            # Calculate processing time
+            processing_time_ms = (time.time() - analysis_start_time) * 1000
+            
+            # Prepare analysis data for CSV
+            analysis_data = {
+                'timestamp': process_timestamp,
+                'datetime': datetime.fromtimestamp(process_timestamp / 1000).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3],
+                'filename': os.path.basename(filepath),
+                'sequence_number': seq_num,
+                'sample_rate': sample_rate,
+                'audio_duration_seconds': round(audio_duration, 3),
+                'decimated_rate': datum.get_derived_data(DerivedDataKey.DECIMATED_AUDIO_RATE) or 0,
+                'frequency_peak_hz': round(datum.get_derived_data(DerivedDataKey.FREQUENCY_PEAK) or 0.0, 2),
+                'rpm': round(datum.get_derived_data(DerivedDataKey.RPM) or 0.0, 1),
+                'engine_status': datum.get_derived_data(DerivedDataKey.ENGINE_STATUS) or 0,
+                'processing_time_ms': round(processing_time_ms, 2),
+                'buffer_size_samples': datum.get_derived_data(DerivedDataKey.BUFFER_SIZE) or 0,
+                'peak_amplitude': round(datum.get_derived_data(DerivedDataKey.PEAK_AMPLITUDE) or 0.0, 6),
+                'notes': f"Events per cycle: {EVENTS_PER_CYCLE}"
+            }
+            
+            # Use mock UART instead of real UART, passing analysis data for CSV saving
+            success = mock_uart.send_packet(process_timestamp, datum, seq_num, analysis_data)
             
             if success:
                 rpm = datum.get_derived_data(DerivedDataKey.RPM) or 0.0
                 status = datum.get_derived_data(DerivedDataKey.ENGINE_STATUS) or 0
                 freq = datum.get_derived_data(DerivedDataKey.FREQUENCY_PEAK) or 0.0
-                print(f"   ⚡ Analysis complete: RPM:{rpm:.1f}, Status:{status}, Freq:{freq:.1f}Hz")
+                print(f"   ⚡ Analysis complete: RPM:{rpm:.1f}, Status:{status}, Freq:{freq:.1f}Hz, Duration:{audio_duration:.1f}s")
             else:
                 print(f"   ❌ Failed to send analysis results")
                 
@@ -512,25 +628,38 @@ def status_monitor():
         try:
             time.sleep(60)  # Every minute
             
+            # Count CSV entries
+            csv_entries = 0
+            try:
+                if os.path.exists(RESULTS_CSV_FILE):
+                    with open(RESULTS_CSV_FILE, 'r') as f:
+                        csv_entries = sum(1 for line in f) - 1  # Subtract header row
+            except:
+                csv_entries = 0
+            
             print(f"📊 Status: Queue: {analyze_queue.qsize()}/{ANALYZE_QUEUE_SIZE}, "
-                  f"Packets sent: {mock_uart.packet_count}")
+                  f"Packets sent: {mock_uart.packet_count}, CSV entries: {csv_entries}")
                       
             logging.info(f"System status - Queue: {analyze_queue.qsize()}, "
-                        f"Packets sent: {mock_uart.packet_count}")
+                        f"Packets sent: {mock_uart.packet_count}, CSV entries: {csv_entries}")
                         
         except Exception as e:
             logging.error(f"Status monitor error: {e}")
 
 def main():
-    print("🧪 Audio Processing System - TEST MODE (IMPROVED ORIGINAL APPROACH)")
+    print("🧪 Audio Processing System - TEST MODE (IMPROVED ORIGINAL APPROACH + CSV)")
     print(f"📁 Processing files from: {AUDIO_DIR}")
+    print(f"📊 Results CSV file: {RESULTS_CSV_FILE}")
     print(f"⏱️ Process interval: {PROCESS_INTERVAL} seconds")
     print(f"🔄 Loop processing: {LOOP_PROCESSING}")
     print(f"🎯 Target decimated rate: {DECIMATED_RATE} Hz")
     print(f"🚗 Events per cycle: {EVENTS_PER_CYCLE}")
     print(f"🔧 APPROACH: TunableFilter with adaptive bandpass, HIGHEST AMPLITUDE peak detection, rolling buffer")
     
-    logging.info("Audio Processing System - TEST MODE (IMPROVED ORIGINAL APPROACH) Starting")
+    logging.info("Audio Processing System - TEST MODE (IMPROVED ORIGINAL APPROACH + CSV) Starting")
+    
+    # Initialize CSV file
+    initialize_csv_file()
     
     # Check if recordings directory exists and has files
     audio_files = get_audio_files()
@@ -565,9 +694,11 @@ def main():
     print("   🎵 File processor (replacing recorder)")
     print("   🔬 Signal analyzer (IMPROVED: TunableFilter + HIGHEST AMPLITUDE peak detection)") 
     print("   📈 Status monitor")
+    print("   💾 CSV results logging enabled")
     print("\n💻 Commands:")
     print("   - Press 's' + Enter for status")
     print("   - Press 'q' + Enter to quit")
+    print("   - Press 'csv' + Enter to show CSV info")
     print("   - Press Ctrl+C for emergency stop")
     
     logging.info("All threads started successfully")
@@ -581,13 +712,46 @@ def main():
                     print("User requested shutdown")
                     break
                 elif user_input == 's':
+                    # Count CSV entries
+                    csv_entries = 0
+                    try:
+                        if os.path.exists(RESULTS_CSV_FILE):
+                            with open(RESULTS_CSV_FILE, 'r') as f:
+                                csv_entries = sum(1 for line in f) - 1  # Subtract header row
+                    except:
+                        csv_entries = 0
+                    
                     print(f"\n📊 System Status:")
                     print(f"   Queue: {analyze_queue.qsize()}/{ANALYZE_QUEUE_SIZE}")
                     print(f"   Packets sent: {mock_uart.packet_count}")
+                    print(f"   CSV entries: {csv_entries}")
                     print(f"   Files available: {len(get_audio_files())}")
                     print(f"   Loop mode: {LOOP_PROCESSING}")
                     print(f"   Process interval: {PROCESS_INTERVAL}s")
+                    print(f"   CSV file: {RESULTS_CSV_FILE}")
                     print(f"   Approach: TunableFilter with adaptive bandpass, HIGHEST AMPLITUDE peak\n")
+                elif user_input == 'csv':
+                    # Show CSV file information
+                    if os.path.exists(RESULTS_CSV_FILE):
+                        try:
+                            with open(RESULTS_CSV_FILE, 'r') as f:
+                                lines = f.readlines()
+                                total_entries = len(lines) - 1  # Subtract header
+                                
+                            print(f"\n📊 CSV File Information:")
+                            print(f"   File: {RESULTS_CSV_FILE}")
+                            print(f"   Total entries: {total_entries}")
+                            print(f"   File size: {os.path.getsize(RESULTS_CSV_FILE)} bytes")
+                            
+                            if total_entries > 0:
+                                print(f"   Headers: {', '.join(CSV_HEADERS)}")
+                                if len(lines) > 1:
+                                    print(f"   Last entry preview: {lines[-1].strip()[:100]}...")
+                            print()
+                        except Exception as e:
+                            print(f"❌ Error reading CSV file: {e}")
+                    else:
+                        print(f"\n❌ CSV file {RESULTS_CSV_FILE} does not exist yet")
                 elif user_input == 'sync':
                     mock_uart.send_sync_packet()
                     print("Mock sync packet sent")
@@ -606,6 +770,17 @@ def main():
     finally:
         print("🔄 Stopping improved original approach test system...")
         logging.info("Stopping improved original approach test system")
+        
+        # Final CSV statistics
+        if os.path.exists(RESULTS_CSV_FILE):
+            try:
+                with open(RESULTS_CSV_FILE, 'r') as f:
+                    total_entries = sum(1 for line in f) - 1  # Subtract header
+                print(f"📊 Final CSV summary: {total_entries} analysis results saved to {RESULTS_CSV_FILE}")
+                logging.info(f"Final CSV summary: {total_entries} analysis results saved")
+            except:
+                pass
+        
         print("✅ Improved original approach test system stopped cleanly")
         logging.info("Improved original approach test system stopped")
 

@@ -1,0 +1,10 @@
+2025-07-21 12:23:31,911 - INFO - Audio Processing System Starting
+2025-07-21 12:23:31,912 - ERROR - UART connection failed: [Errno 2] could not open port /dev/serial0: [Errno 2] No such file or directory: '/dev/serial0'
+2025-07-21 12:23:36,917 - ERROR - UART connection failed: [Errno 2] could not open port /dev/serial0: [Errno 2] No such file or directory: '/dev/serial0'
+2025-07-21 12:23:41,923 - ERROR - UART connection failed: [Errno 2] could not open port /dev/serial0: [Errno 2] No such file or directory: '/dev/serial0'
+2025-07-21 12:23:46,926 - ERROR - UART connection failed: [Errno 2] could not open port /dev/serial0: [Errno 2] No such file or directory: '/dev/serial0'
+2025-07-21 12:23:51,928 - ERROR - UART connection failed: [Errno 2] could not open port /dev/serial0: [Errno 2] No such file or directory: '/dev/serial0'
+2025-07-21 12:23:56,934 - WARNING - Could not initialize UART. System will continue without UART.
+2025-07-21 12:23:56,935 - INFO - Recording in file mode
+2025-07-21 12:23:56,935 - INFO - System started
+2025-07-21 12:23:56,935 - INFO - Recording: Rec000001.wav
