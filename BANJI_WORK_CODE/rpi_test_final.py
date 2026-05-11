@@ -20,7 +20,7 @@ UART_PORT = "/dev/serial0"  # Change to your ESP32 port (e.g., "/dev/ttyUSB0")
 UART_BAUDRATE = 115200
 CLEAN_INTERVAL_DAYS = 7
 DECIMATED_RATE = 500
-EVENTS_PER_CYCLE = 2
+EVENTS_PER_CYCLE = 4
 DISK_SPACE_THRESHOLD = 0.1
 MIN_FREE_SPACE_GB = 1.0
 ANALYZE_QUEUE_SIZE = 10
@@ -40,6 +40,7 @@ INTER_PACKET_DELAY = 0.05
 HEALTH_CHECK_INTERVAL = 60  # seconds
 MAX_CONSECUTIVE_FAILURES = 5
 CONNECTION_TIMEOUT = 300  # 5 minutes without successful communication
+SYNC_INTERVAL = 60  # seconds between periodic time-sync packets
 
 # Setup logging
 logging.basicConfig(
@@ -64,6 +65,7 @@ analyze_queue = queue.Queue(maxsize=ANALYZE_QUEUE_SIZE)
 # Serial UART init with better error handling
 ser = None
 uart_lock = threading.Lock()
+init_lock = threading.Lock()  # separate lock so init_uart() is never called concurrently
 
 # UART Health Monitoring
 class UARTHealthMonitor:
@@ -122,8 +124,13 @@ def test_uart_connection():
 
 def init_uart():
     global ser
+    with init_lock:
+        return _init_uart_locked()
+
+def _init_uart_locked():
+    global ser
     max_attempts = 3
-    
+
     for attempt in range(max_attempts):
         try:
             # Close existing connection
@@ -235,9 +242,6 @@ class Decimation(FeatureExtraction):
         return datum
 
 class FrequencyPeakFinder(FeatureExtraction):
-    def __init__(self, buffer_seconds=5):
-        self.buffer_seconds = buffer_seconds
-
     def extract_features(self, datum: Datum):
         try:
             signal = datum.get_raw_datum(RawDatumKey.AUDIO_ARRAY)
@@ -250,8 +254,10 @@ class FrequencyPeakFinder(FeatureExtraction):
             if np.any(valid_range):
                 valid_fft = fft_data[valid_range]
                 valid_freqs = freqs[valid_range]
-                peak_idx = np.argmax(valid_fft)
-                peak_freq = valid_freqs[peak_idx]
+                if np.max(valid_fft) > 0:
+                    peak_freq = valid_freqs[np.argmax(valid_fft)]
+                else:
+                    peak_freq = 0.0
             else:
                 peak_freq = 0.0
             datum.set_derived_data(DerivedDataKey.FREQUENCY_PEAK, peak_freq)
@@ -266,8 +272,10 @@ class FrequencyPeakFinder(FeatureExtraction):
                 if np.any(valid_range):
                     valid_fft = fft_data[valid_range]
                     valid_freqs = freqs[valid_range]
-                    peak_idx = np.argmax(valid_fft)
-                    decimated_peak_freq = valid_freqs[peak_idx]
+                    if np.max(valid_fft) > 0:
+                        decimated_peak_freq = valid_freqs[np.argmax(valid_fft)]
+                    else:
+                        decimated_peak_freq = 0.0
                 else:
                     decimated_peak_freq = 0.0
                 datum.set_derived_data(DerivedDataKey.DECIMATED_FREQUENCY_PEAK, decimated_peak_freq)
@@ -627,7 +635,7 @@ def recorder():
 def analyzer():
     pipeline = FeatureEngineeringPipeline()
     pipeline.add_block(Decimation(target_rate=DECIMATED_RATE))
-    pipeline.add_block(FrequencyPeakFinder(buffer_seconds=RECORD_SECONDS))
+    pipeline.add_block(FrequencyPeakFinder())
     pipeline.add_output_block(RPM(events_per_crankshaft_cycle=EVENTS_PER_CYCLE))
     
     while True:
@@ -679,6 +687,16 @@ def status_monitor():
         except Exception as e:
             logging.error(f"Status monitor error: {e}")
 
+def sync_sender():
+    """Periodically send a time-sync packet to the ESP32."""
+    while True:
+        try:
+            time.sleep(SYNC_INTERVAL)
+            send_sync_packet()
+            logging.info("Periodic time-sync packet sent")
+        except Exception as e:
+            logging.error(f"Sync sender error: {e}")
+
 def main():
     print("🚀 Audio Processing System Starting...")
     print(f"📁 Recordings directory: {AUDIO_DIR}")
@@ -696,47 +714,15 @@ def main():
     # Send initial sync packet
     send_sync_packet()
     
-    # Start all threads
-    threads = []
-    
-    # Health monitoring thread
-    health_thread = threading.Thread(target=uart_health_check, daemon=True)
-    health_thread.start()
-    threads.append(health_thread)
-    
-    # Status monitoring thread
-    status_thread = threading.Thread(target=status_monitor, daemon=True)
-    status_thread.start()
-    threads.append(status_thread)
-    
-    # Main processing threads
-    recorder_thread = threading.Thread(target=recorder, daemon=True)
-    analyzer_thread = threading.Thread(target=analyzer, daemon=True)
-    
-    recorder_thread.start()
-    analyzer_thread.start()
-    threads.extend([recorder_thread, analyzer_thread])
-    
-    print("✅ System started successfully!")
-    print("📊 Monitoring threads active:")
-    print("   🎤 Audio recorder")
-    print("   🔬 Signal analyzer") 
-    print("   💊 Health monitor")
-    print("   📈 Status monitor")
-    print("\n💻 Commands:")
-    print("   - Press 'h' + Enter for health status")
-    print("   - Press 'q' + Enter to quit")
-    print("   - Press Ctrl+C for emergency stop")
-    
-    logging.info("All threads started successfully")
-    
-    try:
-        while True:
-            # Handle user input
+    shutdown_event = threading.Event()
+
+    def input_handler():
+        while not shutdown_event.is_set():
             try:
                 user_input = input().strip().lower()
                 if user_input == 'q':
                     print("User requested shutdown")
+                    shutdown_event.set()
                     break
                 elif user_input == 'h':
                     print_health_status()
@@ -748,18 +734,44 @@ def main():
                         print("UART reconnection successful")
                     else:
                         print("UART reconnection failed")
-            except EOFError:
-                # Handle Ctrl+D
+            except (EOFError, KeyboardInterrupt):
+                shutdown_event.set()
                 break
-            except KeyboardInterrupt:
-                # Handle Ctrl+C in input
-                break
-                
-            # Send periodic sync packet
-            time.sleep(1)
-            
+            except Exception as e:
+                logging.error(f"Input handler error: {e}")
+
+    # Start all threads
+    thread_specs = [
+        ("health monitor",  uart_health_check),
+        ("status monitor",  status_monitor),
+        ("sync sender",     sync_sender),
+        ("audio recorder",  recorder),
+        ("signal analyzer", analyzer),
+        ("input handler",   input_handler),
+    ]
+    for name, target in thread_specs:
+        t = threading.Thread(target=target, daemon=True, name=name)
+        t.start()
+
+    print("✅ System started successfully!")
+    print("📊 Monitoring threads active:")
+    print("   🎤 Audio recorder")
+    print("   🔬 Signal analyzer")
+    print("   💊 Health monitor")
+    print("   📈 Status monitor")
+    print("   🔄 Sync sender")
+    print("\n💻 Commands:")
+    print("   - Press 'h' + Enter for health status")
+    print("   - Press 'q' + Enter to quit")
+    print("   - Press Ctrl+C for emergency stop")
+
+    logging.info("All threads started successfully")
+
+    try:
+        shutdown_event.wait()
     except KeyboardInterrupt:
         print("\n🛑 Shutdown signal received...")
+        shutdown_event.set()
         
     finally:
         print("🔄 Stopping system...")
